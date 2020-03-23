@@ -1,0 +1,19 @@
+pipeline {
+  agent any
+  tools {nodejs "node"}
+  stages {
+    stage('Clone from git') {
+      steps {
+        git 'https://github.com/rajeever35/node-ts-starter-kit'
+      }
+    }
+    stage('Build image') {
+      app = docker.build("rajeever35/node-ts-starter-kit"
+    }
+    stage('Test') {
+      steps {
+         sh 'yarn test'
+      }
+    }
+  }
+}
