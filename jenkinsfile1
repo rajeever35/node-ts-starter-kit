@@ -8,7 +8,7 @@ pipeline {
       }
     }
     stage('Build image') {
-      script {
+      steps {
         newApp = docker.build("rajeever35/node-ts-starter-kit")
       }
     }
