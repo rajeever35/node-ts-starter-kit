@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Build image') {
       steps {
-      app = docker.build("rajeever35/node-ts-starter-kit")
+        app = docker.build("rajeever35/node-ts-starter-kit")
       }
     }
     stage('Test') {
