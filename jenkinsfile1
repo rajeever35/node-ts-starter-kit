@@ -1,12 +1,8 @@
 pipeline {
   agent any
-  tools {nodejs "node"}
+  
   stages {
-    stage('Prepare') {
-      steps {
-        sh "npm install -g yarn"
-      }
-    }
+    
     stage('Clone from git') {
       steps {
         git 'https://github.com/rajeever35/node-ts-starter-kit'
@@ -19,10 +15,6 @@ pipeline {
           }
       }
     }
-    stage('Test') {
-      steps {
-         sh 'yarn test'
-      }
-    }
+    
   }
 }
